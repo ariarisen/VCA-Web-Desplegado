@@ -1,0 +1,97 @@
+.titulo-seccion {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.titulo-seccion h2 {
+    font-size: 47px;
+    
+}
+
+
+.contenedor-tarjetas-servicios{
+    width: 70%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .tarjeta {
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tarjeta:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: rgb(80, 76, 76);
+  }
+
+  .tarjeta img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .tarjeta-contenido {
+    
+    padding: 2px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta-titulo {
+    color: #252a31;
+    margin-bottom: 10px;
+    
+    text-align: center;
+  }
+
+  .tarjeta-descripcion {
+    color: #111314;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .tarjeta-boton {
+    background-color: #3a72db;
+    color: white;
+    padding: 0.80rem 11px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 550;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    margin-top: auto;
+  }
+
+  .tarjeta-boton:hover {
+    background-color: #c5d9ec;
+    color: rgb(167, 162, 162);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .contenedor-tarjetas-servicios {
+      flex-direction: column;
+      width: 90%;
+    }
+
+    .tarjeta {
+      margin-bottom: 10%;
+    }
+  }

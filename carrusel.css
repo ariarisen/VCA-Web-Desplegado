@@ -1,0 +1,35 @@
+.contenido-principal {
+    position: relative;
+    width: 100%;
+    margin-top: -20px;
+}
+.contenedor-carrusel {
+    position: relative; 
+    width: 100%; 
+    padding-top: 55%; 
+    overflow: hidden; 
+    overflow: hidden;
+}
+
+.carrusel {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 400%; 
+    height: 100%; 
+    display: flex; 
+    transition: transform 1s ease-in-out;
+}
+
+.diapositiva-carrusel {
+    width: 25%;
+    height: 100%;
+    
+}
+
+.diapositiva-carrusel img {
+    width: 100%;
+    height: 78% !important; 
+    object-fit: cover; /* Cubrir pero que sin se deforme */
+}
+
