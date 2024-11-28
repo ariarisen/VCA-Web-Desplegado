@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VCA Soluciones Eléctricas</title>
+    <link rel="icon" href="imagenes/logo-icono.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="encabezado.css">
-    <link rel="stylesheet" href="componentes/botones.css">
     <link rel="stylesheet" href="componentes/mapa.css">
+    <link rel="stylesheet" href="componentes/whatsapp.css">
+    <link rel="stylesheet" href="componentes/banner.css">
+    <link rel="stylesheet" href="servicios/servicios.css">
+    <link rel="stylesheet" href="componentes/seccion-pie-pagina.css">
+    <link rel="stylesheet" href="componentes/titulo-seccion.css">
+
 </head>
 
 <body>
@@ -22,9 +28,9 @@
                     </ul>
                 </div>
                 <div class="encabezado-redes-sociales">
-                    <a href="https://wa.me/997154496" target="_blank"><i class="bi bi-whatsapp" style="color: #25D366; font-size: 24px;"></i></a>
-                    <a href="https://www.facebook.com/vcasolucioneselectricas/" target="_blank"><i class="bi bi-facebook" style="color: #1877F2; font-size: 24px;"></i></a>
-                    <a href="#"><i class="bi bi-instagram" style="color: #E1306C; font-size: 24px;"></i></a>
+                    <a href="https://wa.me/997154496" target="_blank"><i class="bi bi-whatsapp" style="color:black; font-size: 24px;"></i></a>
+                    <a href="https://www.facebook.com/vcasolucioneselectricas/" target="_blank"><i class="bi bi-facebook" style="color:black; font-size: 24px;"></i></a>
+                    <a href="https://www.instagram.com/vcasolucioneselectricas/"target="_blank"><i class="bi bi-instagram" style="color: black; font-size: 24px;"></i></a>
                 </div>
             </div>
         </section>
@@ -61,18 +67,53 @@
                 </nav>
             </div>
         </header>
-    </section>
-    <a href="https://wa.me/997154496" target="_blank" class="boton-whatsapp"> 
-        <i class="bi bi-whatsapp"></i> 
-    </a>
+</section>
 
-    <section class="seccion-mapa">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d975.1258193848337!2d-76.98535!3d-12.146101000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b86b6c6030d5%3A0x1318fdb544b5b0cd!2sAv.%20Caminos%20del%20Inca%203499%2C%20Lima%2015039!5e0!3m2!1ses!2spe!4v1729790904037!5m2!1ses!2spe"
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
+    <div class="contenedor-banner-titulo">
+        <img src="imagenes/servicios/servicio.png">
+    </div>
+    <section id="seccion-servicios"></section>
+    <div class="titulo-seccion">
+        <h1>Soluciones eléctricas cerca de ti</h1>
+    </div>
+    <section id="seccion-mapa"style="margin-top: 20px;"></section>
+    <section class="seccion-whatsapp">
+        
+        <button class="boton-whatsapp" id="BotonWhastApp">
+            <i class="bi bi-whatsapp"></i>
+        </button>
+    
+        <div class="tarjeta-whatsapp" id="TarjetaWhatsApp">
+            <div class="tarjeta-whatsapp-encabezado">
+                <h3>Contáctanos a través de nuestros canales de atención</h3>
+                <button class="boton-cerrar-whatsapp" id="cerrar-tarjeta-whatsapp">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="tarjeta-contacto-whatsapp">
+                <a href="https://wa.me/997154496" class="fila-whatsapp" target="_blank">
+                    <div class="circulo-icono-whatsapp">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div class="informacion-contacto-whatsapp">
+                        <strong>Asesor Técnico</strong>
+                        <span>+51 997154496</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/987358434" class="fila-whatsapp" target="_blank">
+                    <div class="circulo-icono-whatsapp">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div class="informacion-contacto-whatsapp">
+                        <strong>Asesor Técnico</strong>
+                        <span>+51 987358434</span>
+                    </div>
+                </a>
+            </div>
+        </div>
     </section>
+    <section id="seccion-pie-pagina"></section>
+    
 
     <script>
         const botonMenu = document.querySelector('.boton-menu');
@@ -103,6 +144,44 @@
         }
             ultimaPosicionEjeY = window.scrollY;
     });
+
+    async function mostrarSecciones() {
+
+                    const datosArchivo1 = await fetch("servicios/seccion-servicios.html");
+                    const extraerTexto1 = await datosArchivo1.text();
+                    document.getElementById("seccion-servicios").innerHTML = extraerTexto1;
+
+                    const datosArchivo2 = await fetch("componentes/mapa.html");
+                    const extraerTexto2 = await datosArchivo2.text();
+
+                    document.getElementById("seccion-mapa").innerHTML = extraerTexto2;
+                    const datosArchivo3 = await fetch("componentes/seccion-pie-pagina.html");
+                    const extraerTexto3 = await datosArchivo3.text();
+                    document.getElementById("seccion-pie-pagina").innerHTML = extraerTexto3;
+        }
+
+    mostrarSecciones();
+
     </script>
+    <script>
+        document.getElementById('BotonWhastApp').addEventListener('click', function() {
+            document.getElementById('TarjetaWhatsApp').classList.toggle('active');
+        });
+        
+        document.getElementById('cerrar-tarjeta-whatsapp').addEventListener('click', function() {
+            document.getElementById('TarjetaWhatsApp').classList.remove('active');
+        });
+        
+        // Cerrar el card si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            const container = document.querySelector('.seccion-whatsapp');
+            const card = document.getElementById('TarjetaWhatsApp');
+            
+            if (!container.contains(event.target) && card.classList.contains('active')) {
+                card.classList.remove('active');
+            }
+        });
+    </script>
+
 </body>
 </html>

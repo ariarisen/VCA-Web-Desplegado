@@ -1,9 +1,5 @@
-.contenido-principal {
-    position: relative;
-    width: 100%;
-    margin-top: -20px;
-}
-.contenedor-carrusel {
+
+.seccion-carrusel {
     position: relative; 
     width: 100%; 
     padding-top: 55%; 
@@ -31,5 +27,14 @@
     width: 100%;
     height: 78% !important; 
     object-fit: cover; /* Cubrir pero que sin se deforme */
+}
+
+.seccion-banner-inicio {
+    width: 100%;
+    overflow: hidden; /* Evita que la imagen se desborde */
+}
+.seccion-banner-inicio img {
+    width: 100%;
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
 }
 

@@ -1,0 +1,127 @@
+
+.servicios-seccion-servicios {
+    width: 60%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    opacity: 0; 
+    animation: Animacion 1s ease-in-out forwards;/*cuando terminme la animacion los servicios seran visibles*/
+}
+
+
+@keyframes Animacion {
+    /*Al inicio no se ve nada*/
+    from {
+        opacity: 0;
+    }
+    /*los servicios se vuelven visibles*/
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes desplazar-derecha {
+    from {
+        /*Al inicio esta 50px a la derecha*/
+        transform: translateX(50px); 
+        opacity: 0;
+    }
+    to {
+        /*posicion original*/
+        transform: translateX(0); 
+        opacity: 1;
+    }
+}
+
+@keyframes desplazar-izquierda {
+    from {
+        /*Al inicio esta 50px a la izquierda*/
+        transform: translateX(-50px); 
+        opacity: 0;
+    }
+    to {
+        /*posicion original*/
+        transform: translateX(0); 
+        opacity: 1;
+    }
+}
+
+
+.bloque-servicio {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Para el efecto de hover */
+    opacity: 1;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+
+.naranja {
+    background-color: #f97316; 
+    animation-name: desplazar-derecha; 
+}
+
+.bloque-servicio-slate {
+    background-color: #f1f5f9; 
+    animation-name: desplazar-izquierda; 
+}
+
+
+.bloque-servicio:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease-in-out; 
+}
+
+
+@media (min-width: 768px) {
+    .bloque-servicio {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .contenedor-imagen-servicio {
+        width: 50%;
+    }
+
+    .texto-servicio {
+        width: 50%;
+    }
+}
+
+
+.archivo-imagen-servicio {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-servicio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.descripcion-servicio {
+    font-size: 1.125rem;
+}
+
+
+.titulo-servicio.azul {
+    color: #1e3a8a; 
+}
+
+.titulo-servicio,
+.descripcion-servicio {
+    color: white;
+}
+
+.texto-servicio {
+    color: #1e293b; 
+}

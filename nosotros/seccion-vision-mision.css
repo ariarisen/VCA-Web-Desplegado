@@ -1,0 +1,86 @@
+.seccion-mision-vision {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.tarjeta-mision {
+    background-color: #0078BE;
+    color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-vision {
+    background-color: #FF6B00;
+    color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-vision-imagen, .tarjeta-mision-imagen {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta-vision-imagen img, .tarjeta-mision-imagen img {
+    width: 600px;
+    height: 300px;
+}
+
+.tarjeta-mision h2, .tarjeta-vision h2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+}
+
+.mision-vision-rectangulo p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+.tarjeta-mision-degradado-color{
+    position: absolute;
+    width: 300px;  
+    height: 300px; 
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle at bottom right, 
+        rgba(0, 0, 0, 0.2) 0%, 
+        rgba(0, 0, 0, 0) 80%
+    );
+}
+.tarjeta-vision-degradado-color {
+    position: absolute;
+    width: 300px;  
+    height: 300px; 
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at top left, 
+        rgba(0, 0, 0, 0.2) 0%, 
+        rgba(0, 0, 0, 0) 80%
+    );
+}
+
+@media (max-width: 768px) {
+    .seccion-mision-vision {
+        grid-template-columns: 1fr;
+    }
+}

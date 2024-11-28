@@ -1,0 +1,13 @@
+
+
+.contenedor-banner-titulo  {
+    width: 100%!important;
+            
+}
+
+
+.contenedor-banner-titulo img {
+    width: 100%!important;
+    height: auto;      
+    display: block;         
+}
