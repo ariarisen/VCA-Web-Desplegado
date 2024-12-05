@@ -1,7 +1,5 @@
 
-html, body {
-    overflow-x: hidden;
-}
+
 .centrar-seccion{
     width: 100vw;
     display: flex;
@@ -49,7 +47,7 @@ html, body {
 }
 
 .contenedor-pregunta-y-respuesta {
-    background: #2da8a8;
+    background: #E0F3F9;
     border-radius: 12px;
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
